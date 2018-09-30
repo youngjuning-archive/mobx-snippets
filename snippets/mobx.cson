@@ -2,10 +2,10 @@
   'mobx':
     'prefix': 'mobx'
     'body': """
-      import { observable, action } from "mobx";
+      import { observable, action } from "mobx"
 
       ${1:className} {
-        @observable title = "";
+        $2
       }
 
       export default ${1:className}
@@ -22,7 +22,7 @@
     'prefix': 'mobx-action'
     'body': """
       @action ${1:boundClassMethod} = () => {
-
+        $2
       }
     """
     'description': '使用MobX你可以在代码中显式地标记出动作所在的位置'
@@ -39,7 +39,7 @@
     'body': """
       import { observer } from "mobx-react/native"
     """
-  'mobx-rn-screen':
+  'mobx-rn-component':
     'prefix': 'mobx-rn-screen'
     'body': """
       import React, { Component } from 'react'
@@ -74,4 +74,31 @@
       })
       export default ${1:MyComponent}
 
+    """
+  'mobx-rn-func':
+    'prefix': ''
+    'body': """
+      import { observer } from 'mobx-react'
+      import React from 'react'
+      import { View, Text, StyleSheet } from 'react-native'
+      import PropTypes from 'prop-types'
+
+      function ${1:componentName}({ style }) {
+        return (
+          <View style={[styles.container, style]} />
+        )
+      }
+
+      ${1:componentName}.propTypes = {
+
+      }
+      
+      ${1:componentName}.defaultProps = {
+
+      }
+
+      const styles = StyleSheet.create({
+        container: {},
+      })
+      export default observer(${1:componentName})
     """
