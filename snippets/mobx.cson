@@ -107,8 +107,8 @@
       export default ${1:MyComponent}
 
     """
-  'mobx-rn-func':
-    'prefix': ''
+  'mobx-rn-stateless':
+    'prefix': 'mobx-rn-stateless'
     'body': """
       import { observer } from 'mobx-react'
       import React from 'react'
@@ -133,4 +133,11 @@
         container: {},
       })
       export default observer(${1:componentName})
+    """
+  'mobx-rn-func':
+    'prefix': 'mobx-rn-func'
+    'body': """
+      const ${1:FuncName} = observer(({ $2 }) => (
+        <view />
+      ))
     """
