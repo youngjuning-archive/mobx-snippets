@@ -1,0 +1,22 @@
+{
+  "name": "mobx-snippets",
+  "version": "0.0.0",
+  "author": {
+    "name": "杨俊宁",
+    "email": "youngjuning@aliyun.com",
+    "url": "https://youngjuning.js.org/"
+  },
+  "description": "atom mobx snippets plugin by youngjuning",
+  "keywords": [
+    "youngjuning",
+    "react native",
+    "react",
+    "mobx",
+    "mobx-react"
+  ],
+  "repository": "https://github.com/youngjuning/mobx-snippets",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

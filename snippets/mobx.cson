@@ -1,0 +1,77 @@
+'.source.jsx':
+  'mobx':
+    'prefix': 'mobx'
+    'body': """
+      import { observable, action } from "mobx";
+
+      ${1:className} {
+        @observable title = "";
+      }
+
+      export default ${1:className}
+
+    """
+  'mobx observable':
+    'prefix': 'mobx-observable'
+    'body': """
+      @observable $1 = $2
+    """
+    'description': '@observable 可以在实例字段和属性 getter 上使用'
+    'descriptionMoreURL': 'http://t.cn/EPkOcSG'
+  'mobx action':
+    'prefix': 'mobx-action'
+    'body': """
+      @action ${1:boundClassMethod} = () => {
+
+      }
+    """
+    'description': '使用MobX你可以在代码中显式地标记出动作所在的位置'
+    'descriptionMoreURL': 'http://t.cn/EPkohi3'
+  'import mobx-react':
+    'prefix': 'mobx-react'
+    'body': """
+      import { observer } from "mobx-react"
+    """
+    'description': 'React bindings for MobX'
+    'descriptionMoreURL': 'http://t.cn/R5cHJQf'
+  'mobx-react-native':
+    'prefix': 'mobx-rn'
+    'body': """
+      import { observer } from "mobx-react/native"
+    """
+  'mobx-rn-screen':
+    'prefix': 'mobx-rn-screen'
+    'body': """
+      import React, { Component } from 'react'
+      import {
+        View,
+        Text,
+        StyleSheet,
+      } from 'react-native'
+      import { observer } from 'mobx-react/native'
+
+      @observer
+      class ${1:MyComponent} extends Component {
+        constructor(props) {
+          super(props)
+        }
+
+        componentDidMount() {}
+
+        render() {
+          return (
+            <View style={styles.container}>
+              <Text>I am the ${1:MyComponent} component</Text>
+            </View>
+          )
+        }
+      }
+
+      const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+        },
+      })
+      export default ${1:MyComponent}
+
+    """
