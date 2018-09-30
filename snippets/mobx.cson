@@ -4,11 +4,11 @@
     'body': """
       import { observable, action } from "mobx"
 
-      ${1:className} {
-        $2
+      class ${1:ClassName} {
+        @observable title = ''
       }
 
-      export default ${1:className}
+      export default ${1:ClassName}
 
     """
   'mobx observable':
@@ -39,9 +39,10 @@
     'body': """
       import { observer } from "mobx-react/native"
     """
-  'mobx-rn-component':
+  'mobx-rn-screen':
     'prefix': 'mobx-rn-screen'
     'body': """
+      /* eslint no-useless-constructor:0 */
       import React, { Component } from 'react'
       import {
         View,
@@ -57,6 +58,37 @@
         }
 
         componentDidMount() {}
+
+        render() {
+          return (
+            <View style={styles.container}>
+              <Text>I am the ${1:MyComponent} component</Text>
+            </View>
+          )
+        }
+      }
+
+      const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+        },
+      })
+      export default ${1:MyComponent}
+
+    """
+  'mobx-rn-component':
+    'prefix': 'mobx-rn-component'
+    'body': """
+      import React, { Component } from 'react'
+      import {
+        View,
+        Text,
+        StyleSheet,
+      } from 'react-native'
+      import { observer } from 'mobx-react/native'
+
+      @observer
+      class ${1:MyComponent} extends Component {
 
         render() {
           return (
@@ -92,7 +124,7 @@
       ${1:componentName}.propTypes = {
 
       }
-      
+
       ${1:componentName}.defaultProps = {
 
       }
