@@ -137,7 +137,7 @@
   'mobx-rn-func':
     'prefix': 'mobx-rn-func'
     'body': """
-      const ${1:FuncName} = observer(({ $2 }) => (
+      const ${1:FuncName} = observer(({ ${2:props} }) => (
         <view />
       ))
     """
