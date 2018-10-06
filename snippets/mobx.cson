@@ -3,6 +3,11 @@
     'prefix': 'mobx'
     'body': """
       import { observable, action } from "mobx"
+    """
+  'mobx-file':
+    'prefix': 'mobx-file'
+    'body': """
+      import { observable, action } from "mobx"
 
       class ${1:ClassName} {
         @observable title = ''
@@ -10,6 +15,13 @@
 
       export default ${1:ClassName}
 
+    """
+  'mobx-class':
+    'prefix': 'mobx-class'
+    'body': """
+      class ${1:ClassName} {
+        @observable title = ''
+      }
     """
   'mobx observable':
     'prefix': 'mobx-observable'
