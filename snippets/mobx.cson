@@ -39,6 +39,15 @@
     """
     'description': '使用MobX你可以在代码中显式地标记出动作所在的位置'
     'descriptionMoreURL': 'http://t.cn/EPkohi3'
+  'mobx runInAction':
+    'prefix': 'mobx-runInAction'
+    'body': """
+      runInAction(() => {
+        $1
+      })
+    """
+    'description': 'runInAction 工具函数'
+    'descriptionMoreURL': 'http://t.cn/EhlfHbW'
   'import mobx-react':
     'prefix': 'mobx-react'
     'body': """
