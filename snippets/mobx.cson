@@ -2,12 +2,12 @@
   'mobx':
     'prefix': 'mobx'
     'body': """
-      import { observable, action, toJS } from "mobx"
+      import { observable, action, runInAction, computed, toJS } from "mobx"
     """
   'mobx-file':
     'prefix': 'mobx-file'
     'body': """
-      import { observable, action } from "mobx"
+      import { observable, action, runInAction, computed, toJS } from "mobx"
 
       class ${1:ClassName} {
         @observable title = ''
