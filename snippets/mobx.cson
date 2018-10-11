@@ -48,6 +48,15 @@
     """
     'description': 'runInAction 工具函数'
     'descriptionMoreURL': 'http://t.cn/EhlfHbW'
+  'Snippet Name':
+    'prefix': 'mobx-computed'
+    'body': """
+      @computed get ${1:funcName}() {
+        $2
+      }
+    """
+    'description': ''
+    'descriptionMoreURL': ''
   'import mobx-react':
     'prefix': 'mobx-react'
     'body': """
