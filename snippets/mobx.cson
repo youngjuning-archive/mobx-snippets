@@ -48,15 +48,15 @@
     """
     'description': 'runInAction 工具函数'
     'descriptionMoreURL': 'http://t.cn/EhlfHbW'
-  'Snippet Name':
+  'mobx computed':
     'prefix': 'mobx-computed'
     'body': """
       @computed get ${1:funcName}() {
-        $2
+        return $2
       }
     """
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': '计算值还是高度优化过的，所以尽可能的多使用它们'
+    'descriptionMoreURL': 'http://t.cn/E7uudG2'
   'import mobx-react':
     'prefix': 'mobx-react'
     'body': """
@@ -110,15 +110,22 @@
     'prefix': 'mobx-rn-component'
     'body': """
       import React, { Component } from 'react'
-      import {
-        View,
-        Text,
-        StyleSheet,
-      } from 'react-native'
+      import { View, Text, StyleSheet } from 'react-native'
+      import PropTypes from 'prop-types'
       import { observer } from 'mobx-react/native'
 
       @observer
       class ${1:MyComponent} extends Component {
+        static propTypes = {
+          copyUsers: PropTypes.array.isRequired,
+          extraCopyUsers: PropTypes.array.isRequired,
+          style: PropTypes.array,
+          onAdd: PropTypes.func.isRequired,
+        }
+
+        static defaultProps = {
+          style: {},
+        }
 
         render() {
           return (
