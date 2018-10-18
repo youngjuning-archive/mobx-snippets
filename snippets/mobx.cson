@@ -1,4 +1,4 @@
-'.source.jsx':
+'.source.js.jsx,.source.js':
   'mobx':
     'prefix': 'mobx'
     'body': """
