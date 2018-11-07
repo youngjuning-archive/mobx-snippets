@@ -2,7 +2,7 @@
   'mobx':
     'prefix': 'mobx'
     'body': """
-      import { observable, action, runInAction, computed, toJS } from 'mobx’
+      import { observable, action, runInAction, computed, toJS } from 'mobx'
     """
   'mobx-file':
     'prefix': 'mobx-file'
