@@ -113,10 +113,7 @@
       @observer
       class ${1:MyComponent} extends Component {
         static propTypes = {
-          copyUsers: PropTypes.array.isRequired,
-          extraCopyUsers: PropTypes.array.isRequired,
-          style: PropTypes.array,
-          onAdd: PropTypes.func.isRequired,
+          style: PropTypes.object,
         }
 
         static defaultProps = {
