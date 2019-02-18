@@ -57,7 +57,7 @@
     """
     'description': '计算值还是高度优化过的，所以尽可能的多使用它们'
     'descriptionMoreURL': 'http://t.cn/E7uudG2'
-  'import mobx-react':
+  'mobx-react':
     'prefix': 'mobx-react'
     'body': """
       import { observer } from "mobx-react"
@@ -121,8 +121,9 @@
         }
 
         render() {
+          const { style } = this.props
           return (
-            <View style={styles.container}>
+            <View style={[styles.container, style]}>
               <Text>I am the ${1:MyComponent} component</Text>
             </View>
           )
